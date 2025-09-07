@@ -76,16 +76,6 @@ Pengguna dapat mengetik atau menempelkan konten Markdown di panel kiri dan melih
 - **Font Awesome**: Ikon untuk antarmuka pengguna
 - **Google Fonts**: Font Poppins dan Fira Code
 
-## Pengembangan Lebih Lanjut
-
-Beberapa ide untuk pengembangan lebih lanjut:
-
-- Menambahkan dukungan untuk tabel Markdown yang lebih baik
-- Implementasi fitur kolaborasi real-time
-- Menambahkan opsi untuk mengimpor file Markdown
-- Integrasi dengan layanan cloud storage (Google Drive, Dropbox)
-- Menambahkan lebih banyak tema dan opsi kustomisasi
-- Dukungan untuk ekstensi Markdown tambahan
 
 ---
 
