@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Preview</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="208" height="128" viewBox="0 0 208 128"><rect width="198" height="118" x="5" y="5" ry="10" stroke="#000" stroke-width="10" fill="none"/><path d="M30 98V30h20l20 25 20-25h20v68H90V59L70 84 50 59v39zm125 0l-30-33h20V30h20v35h20z"/></svg>
+                    <h1>Markdown Preview</h1>
+                </div>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Mode Gelap</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="toolbar">
+            <div class="toolbar-buttons">
+                <button class="md-btn" data-markdown="# "><i class="fas fa-heading"></i> H1</button>
+                <button class="md-btn" data-markdown="## "><i class="fas fa-heading fa-xs"></i> H2</button>
+                <button class="md-btn" data-markdown="### "><i class="fas fa-heading fa-2xs"></i> H3</button>
+                <button class="md-btn" data-markdown="**Bold**"><i class="fas fa-bold"></i></button>
+                <button class="md-btn" data-markdown="*Italic*"><i class="fas fa-italic"></i></button>
+                <button class="md-btn" data-markdown="~~Strikethrough~~"><i class="fas fa-strikethrough"></i></button>
+                <button class="md-btn" data-markdown="[Link](url)"><i class="fas fa-link"></i></button>
+                <button class="md-btn" data-markdown="![Alt Text](image-url)"><i class="fas fa-image"></i></button>
+                <button class="md-btn" data-markdown="- "><i class="fas fa-list-ul"></i></button>
+                <button class="md-btn" data-markdown="1. "><i class="fas fa-list-ol"></i></button>
+                <button class="md-btn" data-markdown="> "><i class="fas fa-quote-right"></i></button>
+                <button class="md-btn" data-markdown="```\ncode\n```"><i class="fas fa-code"></i></button>
+                <button class="md-btn" data-markdown="---"><i class="fas fa-minus"></i></button>
+            </div>
+            <div class="toolbar-actions">
+                <button id="copy-html-btn"><i class="far fa-copy"></i> Salin HTML</button>
+                <button id="copy-md-btn"><i class="far fa-copy"></i> Salin Markdown</button>
+                <button id="clear-btn"><i class="fas fa-trash"></i> Hapus</button>
+                <button id="save-btn"><i class="fas fa-save"></i> Simpan</button>
+            </div>
+        </div>
+
+        <div class="editor-container">
+            <div class="editor-wrapper">
+                <div class="editor-header">
+                    <h2>Markdown</h2>
+                    <div class="editor-controls">
+                        <button id="fullscreen-editor-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+                <div class="editor">
+                    <textarea id="markdown-input" placeholder="Ketik markdown di sini..."></textarea>
+                </div>
+            </div>
+
+            <div class="preview-wrapper">
+                <div class="preview-header">
+                    <h2>Preview</h2>
+                    <div class="preview-controls">
+                        <button id="fullscreen-preview-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+                <div class="preview">
+                    <div id="preview-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="markdown-guide">
+            <div class="guide-header">
+                <h3>Panduan Markdown</h3>
+                <button id="toggle-guide-btn"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="guide-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elemen</th>
+                            <th>Sintaks Markdown</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Heading 1</td>
+                            <td><code># Heading 1</code></td>
+                        </tr>
+                        <tr>
+                            <td>Heading 2</td>
+                            <td><code>## Heading 2</code></td>
+                        </tr>
+                        <tr>
+                            <td>Heading 3</td>
+                            <td><code>### Heading 3</code></td>
+                        </tr>
+                        <tr>
+                            <td>Bold</td>
+                            <td><code>**teks bold**</code> atau <code>__teks bold__</code></td>
+                        </tr>
+                        <tr>
+                            <td>Italic</td>
+                            <td><code>*teks italic*</code> atau <code>_teks italic_</code></td>
+                        </tr>
+                        <tr>
+                            <td>Strikethrough</td>
+                            <td><code>~~teks dicoret~~</code></td>
+                        </tr>
+                        <tr>
+                            <td>Link</td>
+                            <td><code>[teks link](url)</code></td>
+                        </tr>
+                        <tr>
+                            <td>Gambar</td>
+                            <td><code>![teks alt](url-gambar)</code></td>
+                        </tr>
+                        <tr>
+                            <td>Daftar Tidak Berurutan</td>
+                            <td><code>- Item 1<br>- Item 2<br>- Item 3</code></td>
+                        </tr>
+                        <tr>
+                            <td>Daftar Berurutan</td>
+                            <td><code>1. Item 1<br>2. Item 2<br>3. Item 3</code></td>
+                        </tr>
+                        <tr>
+                            <td>Blockquote</td>
+                            <td><code>> Teks kutipan</code></td>
+                        </tr>
+                        <tr>
+                            <td>Kode Inline</td>
+                            <td><code>`kode inline`</code></td>
+                        </tr>
+                        <tr>
+                            <td>Blok Kode</td>
+                            <td><code>```<br>blok kode<br>```</code></td>
+                        </tr>
+                        <tr>
+                            <td>Garis Horizontal</td>
+                            <td><code>---</code> atau <code>***</code> atau <code>___</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Markdown Preview. Dibuat dengan <i class="fas fa-heart"></i> oleh Dzarel</p>
+        </div>
+    </footer>
+
+    <div class="notification" id="notification">
+        <span id="notification-message"></span>
+        <button id="notification-close"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- Modal untuk menyimpan dokumen -->
+    <div class="modal" id="save-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Simpan Dokumen</h3>
+                <button id="close-modal-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="document-name">Nama Dokumen</label>
+                    <input type="text" id="document-name" placeholder="Masukkan nama dokumen">
+                </div>
+                <div class="form-group">
+                    <label>Format</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="save-format" value="markdown" checked>
+                            Markdown (.md)
+                        </label>
+                        <label>
+                            <input type="radio" name="save-format" value="html">
+                            HTML (.html)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-save-btn">Batal</button>
+                <button id="confirm-save-btn">Simpan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contoh markdown untuk memulai -->
+    <script type="text/template" id="sample-markdown"># Selamat Datang di Markdown Preview
+
+Ini adalah editor markdown sederhana dengan **preview langsung**. Anda dapat mengetik markdown di sisi kiri dan melihat hasilnya di sisi kanan secara *real-time*.
+
+## Fitur
+
+- Preview langsung saat mengetik
+- Dukungan untuk semua sintaks markdown standar
+- Mode gelap/terang
+- Salin hasil HTML atau markdown
+- Simpan sebagai file markdown atau HTML
+
+### Contoh Kode
+
+```javascript
+function helloWorld() {
+  console.log("Hello, world!");
+}
+```
+
+> Markdown adalah cara mudah untuk menulis konten terformat dengan sintaks sederhana.
+
+![Logo Markdown](https://avatars.githubusercontent.com/u/112155072?v=4)
+
+---
+
+Selamat mencoba!</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.6/purify.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
