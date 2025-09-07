@@ -48,15 +48,10 @@ Tidak diperlukan konfigurasi tambahan atau instalasi server. Aplikasi ini berjal
 ```
 /
 ├── index.html              # File HTML utama
-├── README.md              # Dokumentasi proyek
-├── assets/
-│   ├── css/
-│   │   └── style.css      # File CSS untuk styling
-│   ├── js/
-│   │   └── script.js      # File JavaScript untuk fungsionalitas
-│   └── images/
-│       ├── markdown-logo.svg  # Logo aplikasi
-│       └── illustration.svg   # Ilustrasi untuk README
+├── README.md               # Dokumentasi proyek
+│── style.css               # File CSS untuk styling
+│── script.js               # File JavaScript untuk fungsionalitas
+\
 ```
 
 ## Demo
