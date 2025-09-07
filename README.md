@@ -56,7 +56,7 @@ Tidak diperlukan konfigurasi tambahan atau instalasi server. Aplikasi ini berjal
 
 ## Demo
 
-![Demo Markdown Preview](./assets/images/illustration.svg)
+![Demo Markdown Preview](markdown.png)
 
 Aplikasi ini memiliki antarmuka yang terdiri dari dua panel utama:
 
